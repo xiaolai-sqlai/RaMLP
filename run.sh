@@ -1,0 +1,5 @@
+nohup python -u -m torch.distributed.run --nproc_per_node=8 main.py --model tiny --drop_path 0.2 --epochs 300 --batch_size 128 --lr 4.0e-3 --update_freq 4 --model_ema false --model_ema_eval false --use_amp true --data_path /INPUT/dataset/imagenet --output_dir ./checkpoint &
+
+nohup python -u -m torch.distributed.run --nproc_per_node=8 main.py --model small --drop_path 0.3 --epochs 300 --batch_size 128 --lr 4.0e-3 --update_freq 4 --model_ema false --model_ema_eval false --use_amp true --data_path /INPUT/dataset/imagenet --output_dir ./checkpoint &
+
+nohup python -u -m torch.distributed.run --nproc_per_node=8 main.py --model base --drop_path 0.4 --epochs 300 --batch_size 128 --lr 4.0e-3 --update_freq 4 --model_ema false --model_ema_eval false --use_amp true --data_path /INPUT/dataset/imagenet --output_dir ./checkpoint &
